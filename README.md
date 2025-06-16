@@ -27,14 +27,27 @@ A modern, responsive Django TODO starter app inspired by Airbnb's design princip
 
 1. **Clone the repository**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/MILANydv/TODO.git
    cd TODO
    ```
 2. **Create and activate a virtual environment**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+
+   - **Linux / macOS**
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+   - **Windows (CMD)**
+     ```cmd
+     python -m venv venv
+     venv\Scripts\activate
+     ```
+   - **Windows (PowerShell)**
+     ```powershell
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
+     ```
+
 3. **Install dependencies**
    ```bash
    pip install django
