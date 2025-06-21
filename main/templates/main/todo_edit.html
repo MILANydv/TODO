@@ -1,8 +1,10 @@
 {% extends 'main/base.html' %} {% block title %}Edit Todo - TODO{% endblock %}
 {% block content %}
-<h1>Edit Todo</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Update</button>
-</form>
+<div class="form-container">
+  <h1>Edit Todo</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.title }} {{ form.description }}
+    <button type="submit" class="cta-btn">Update</button>
+  </form>
+</div>
 {% endblock %}

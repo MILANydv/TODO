@@ -5,7 +5,7 @@ TODO{% endblock %} {%block style %}
 <div class="form-container">
   <h1>Contact Us</h1>
   <form method="post">
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %} {{ form.name }} {{ form.email }} {{ form.message }}
     <button type="submit" class="cta-btn">Submit</button>
   </form>
 </div>
