@@ -1,0 +1,102 @@
+:root {
+  --primary: #ff5a5f;
+  --background: #fff;
+  --text: #222;
+  --secondary: #767676;
+  --border-radius: 16px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #181818;
+    --text: #fff;
+    --secondary: #aaa;
+  }
+}
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: var(--background);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+nav a {
+  color: var(--secondary);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--primary);
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.hero {
+  max-width: 600px;
+  text-align: center;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-desc {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #e04850;
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  nav a {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+  }
+}

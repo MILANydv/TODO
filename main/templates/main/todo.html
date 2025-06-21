@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %} 
+{% load static %}
+
+{% block title %}Todo - TODO{% endblock %} 
+{%block style %}
+<link rel="stylesheet" href="{% static 'main/css/todo.css' %}" />
+{% endblock %}
+ {% block content %}
+<div class="todo-container">
+  <h1>Todo List</h1>
+
+  <form method="post" class="todo-form">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Add Todo</button>
+  </form>
+
+  <ul class="todo-list">
+    {% for todo in todos %}
+    <li class="todo-item {% if todo.completed %}completed{% endif %}">
+      <span>{{ todo.title }}</span>
+      <div class="todo-actions">
+        <a href="{% url 'todo_edit' todo.pk %}">Edit</a>
+        <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
+        <a href="{% url 'todo_mark_done' todo.pk %}">
+          {% if todo.completed %} Undo {% else %} Done {% endif %}
+        </a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
