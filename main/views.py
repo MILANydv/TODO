@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import TodoForm
+from .forms import ContactForm, TodoForm
 from .models import Todo
 
 # Create your views here.
@@ -12,7 +12,14 @@ def features(request):
     return render(request, 'main/features.html')
 
 def contact(request):
-    return render(request, 'main/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # In a real app, you'd handle the form data (e.g., send an email)
+            return redirect('home') 
+    else:
+        form = ContactForm()
+    return render(request, 'main/contact.html', {'form': form})
 
 def todo(request):
     todos = Todo.objects.all()

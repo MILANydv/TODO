@@ -1,9 +1,30 @@
-{% extends 'main/base.html' %}
-{% load static %}
-
- {% block title %}Features - TODO{% endblock %} 
-{%block style %}
+{% extends 'main/base.html' %} {% load static %} {% block title %}Features -
+TODO{% endblock %} {% block style %}
 <link rel="stylesheet" href="{% static 'main/css/features.css' %}" />
 {% endblock %} {% block content %}
-<h1>Features Page</h1>
+<div class="features-container">
+  <h1>Features</h1>
+  <p>Discover what makes our TODO app unique.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h2>Clean & Modern Design</h2>
+      <p>
+        A beautiful, intuitive interface inspired by the best in the industry.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h2>Responsive on All Devices</h2>
+      <p>Works seamlessly on your desktop, tablet, and mobile phone.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Performance Optimized</h2>
+      <p>A fast and lightweight experience, so you can focus on your tasks.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Theme Compatible</h2>
+      <p>Supports both light and dark modes to match your preferences.</p>
+    </div>
+  </div>
+</div>
 {% endblock %}

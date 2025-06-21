@@ -1,8 +1,12 @@
-{% extends 'main/base.html' %} 
-{% load static %}
-{% block title %}Contact - TODO{% endblock %} 
-{%block style %}
+{% extends 'main/base.html' %} {% load static %} {% block title %}Contact -
+TODO{% endblock %} {%block style %}
 <link rel="stylesheet" href="{% static 'main/css/contact.css' %}" />
 {% endblock %} {% block content %}
-<h1>Contact Page</h1>
+<div class="form-container">
+  <h1>Contact Us</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="cta-btn">Submit</button>
+  </form>
+</div>
 {% endblock %}
